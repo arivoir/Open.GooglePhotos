@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace Open.GooglePhotos
 {
-    public class GooglePlusClient : GoogleClient
+    public class GooglePhotosClient : GoogleClient
     {
         #region ** fields
 
@@ -24,7 +24,7 @@ namespace Open.GooglePhotos
 
         #region ** initialization
 
-        public GooglePlusClient(string oauth2Token)
+        public GooglePhotosClient(string oauth2Token)
         {
             _oauth2Token = oauth2Token;
         }
