@@ -256,7 +256,7 @@ namespace Open.GooglePhotos
         /// Frame rate of the video. 
         /// </summary>
         [DataMember(Name = "fps")]
-        public int FPS { get; set; }
+        public double FPS { get; set; }
 
         /// <summary>
         /// Processing status of the video. 
