@@ -82,6 +82,21 @@ namespace Open.GooglePhotos
             }
         }
 
+        public async Task<SharedAlbumsResponse> GetSharedAlbumsAsync(string pageToken = null, int? pageSize = null, string fields = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var uri = BuildUri(ApiServiceUri + "sharedAlbums", pageToken: pageToken, fields: fields, pageSize: pageSize);
+            var client = CreateClient();
+            var response = await client.GetAsync(uri, cancellationToken);
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadJsonAsync<SharedAlbumsResponse>();
+            }
+            else
+            {
+                throw await ProcessException(response);
+            }
+        }
+
         public async Task<Album> CreateAlbumAsync(string title, CancellationToken cancellationToken = default(CancellationToken))
         {
             var uri = BuildUri(ApiServiceUri + "albums");

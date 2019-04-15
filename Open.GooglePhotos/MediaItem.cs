@@ -212,13 +212,13 @@ namespace Open.GooglePhotos
         /// Focal length of the camera lens with which the photo was taken. 
         /// </summary>
         [DataMember(Name = "focalLength")]
-        public int FocalLength { get; set; }
+        public double FocalLength { get; set; }
 
         /// <summary>
         /// Aperture f number of the camera lens with which the photo was taken. 
         /// </summary>
         [DataMember(Name = "apertureFNumber")]
-        public int ApertureFNumber { get; set; }
+        public double ApertureFNumber { get; set; }
 
         /// <summary>
         /// ISO of the camera with which the photo was taken. 

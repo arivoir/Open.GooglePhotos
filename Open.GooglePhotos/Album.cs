@@ -35,6 +35,25 @@ namespace Open.GooglePhotos
     }
 
     /// <summary>
+    /// List of albums requested.
+    /// </summary>
+    [DataContract]
+    public class SharedAlbumsResponse
+    {
+        /// <summary>
+        /// List of shared albums. 
+        /// </summary>
+        [DataMember(Name = "sharedAlbums")]
+        public Album[] SharedAlbums { get; set; }
+
+        /// <summary>
+        /// Token to use to get the next set of shared albums. Populated if there are more shared albums to retrieve for this request. 
+        /// </summary>
+        [DataMember(Name = "nextPageToken")]
+        public string NextPageToken { get; set; }
+    }
+
+    /// <summary>
     /// Representation of an album in Google Photos. Albums are containers for media items. If an album has been shared by the application, it contains an extra shareInfo property.
     /// </summary>
     [DataContract]
